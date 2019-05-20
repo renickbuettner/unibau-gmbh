@@ -1,0 +1,105 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+header {
+  margin: 0;
+  padding: 0 0 5rem 0;
+}
+header a {
+  color: white;
+}
+header .nav .nav-link.active {
+  text-decoration: underline;
+}
+header .nav .nav-link:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+header .navbar {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 0 1rem;
+}
+header .navbar .navbar-nav .nav-item,
+header .navbar .navbar-nav .nav-link {
+  color: white;
+  padding: 1rem;
+  transition: all ease-in-out 200ms;
+}
+header .navbar .navbar-nav .nav-item.active,
+header .navbar .navbar-nav .nav-link.active {
+  text-decoration: underline;
+}
+header .navbar .navbar-nav .nav-item:hover,
+header .navbar .navbar-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+header .navbar .navbar-nav .nav-item.active,
+header .navbar .navbar-nav .nav-link.active,
+header .navbar .navbar-nav .nav-item:hover,
+header .navbar .navbar-nav .nav-link:hover,
+header .navbar .navbar-nav .nav-item:focus,
+header .navbar .navbar-nav .nav-link:focus {
+  color: white;
+}
+header .navbar .btn-outline-light {
+  color: white;
+}
+header .navbar .btn-outline-light::before {
+  margin-right: 0.2rem;
+  content: ' ';
+  display: block;
+  float: left;
+  width: 2rem;
+  height: 1.5rem;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAABUFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9GqXNDAAAAb3RSTlMAAQIDBAUGBwgJCgsMDQ4PEBITFBUWGBkaGxwdHiMkJSYnKSstLzEyNDY4PUBCRFBSVVdZXV9jZmlscXR3eHmAgoWJi4ySlJWbnqKlqquvsrS3ub7BxcfOz9PV19na3N7g4ubo6evt7/Hz9ff5+/2W33tLAAABXUlEQVQYGbXB7T9TYQDH4e+Nc3a2Y1YLTTUVUeR5erQ8pEhP2oSFrdRO5tj2+//fdfNJRqd3uS7+j7bbsx8OZP18n8sazkvnQ7WoPb/CGXdRUnHyhmfAxG9ObUiad/jteqD6kwQt/GcN/ejhxJ2G1jwuiL9TvR+rM9RjIjxVzQc+a45IL7QBA9o1RDJl3WVZY1jDlUInZLa3M5AslIewxvWSiroAtykVIJCqUJSaDpBSmSPFgKSkCkaWoSIpCcQUUtI1rCU1h2BamobhphawrqpEXjmO+Q6W52E5PscmNU+vai6R2qu6BataN0RZ1UegY0/rLn8xyzqIYyX2VB3lgu5NHXZzwnkrbfm0yLyWvnRx6qHkg+lLeW6idyS/LzUeGf4YVAliRZ36mnNo8UlTZAN926kd7RcXJtKc80D17Iq0ZIiSDtWQvt8nUiqQFMy0E+2Nwlf3DP/S4XNJfgH7xFdkdzyI1AAAAABJRU5ErkJggg==);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+header .navbar .btn-outline-light:hover::before {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+header .navbar .navbar-toggler-icon {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAMAAACf4xmcAAAARVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////9SnXPCAAAAFnRSTlMAAQIEBQcICQsMDXt8fn+GlO3v8fv92Ny/JQAAAIZJREFUOMvt09EKwjAMheEkU7fZui2dnvd/VK8EOQnMC2ET/C/LB20KETl4VhycV2NWkXVj5rgaN6IxA8IFosAXmfR9zqwm8xZjls9bmDkG5UY4M0Djx78P8mdHYA2D6jabAOCyyWxqn7DXC3dgK06BnbHy0ZzuwsysWx4B3ZdOYmFl5Ad6Ak8RFrc7p7ocAAAAAElFTkSuQmCC);
+}
+header h1.title {
+  color: white;
+  font-size: 3rem;
+}
+header::after {
+  content: '';
+  display: block;
+  width: 100vw;
+  height: 20vw;
+  background-size: cover;
+  background-position: left bottom;
+  background-image: url(../images/header-after-v2.svg);
+}
+@media only screen and (max-width: 576px) {
+  header h1.title {
+    color: white;
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+  header .btn-contact {
+    display: block;
+    width: 100% !important;
+  }
+  header .nav .nav-link {
+    display: block;
+    width: 100%;
+  }
+}
+.bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg.header {
+  background-image: url(../images/chuttersnap-473332-unsplash.jpg);
+}
