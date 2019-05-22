@@ -1,8 +1,17 @@
-$(document).ready(function () {
+page.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+if (page.slug === 'home' && !page.isMobile) {
+    const syncCards = function () {
+        let map = $("#card-map"), company = $("#card-company");
+        map.css('min-height', company.height());
+    }
     
-    // Homepage
-    // @ToDo
-    // - card height should synchronise onResize
+    window.onresize = function(event) {
+        syncCards()
+    };
     
-    
-});
+    $(document).ready(function () {
+        setTimeout(syncCards, 500);
+        setTimeout(syncCards, 1600);
+    });
+}
