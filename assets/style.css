@@ -22,27 +22,28 @@ header .navbar {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   padding: 0 1rem;
+  transition: all ease-in-out 300ms;
 }
 header .navbar .navbar-nav .nav-item,
-header .navbar .navbar-nav .nav-link {
+header .navbar .nav-link {
   color: white;
   padding: 1rem;
   transition: all ease-in-out 200ms;
 }
 header .navbar .navbar-nav .nav-item.active,
-header .navbar .navbar-nav .nav-link.active {
+header .navbar .nav-link.active {
   text-decoration: underline;
 }
 header .navbar .navbar-nav .nav-item:hover,
-header .navbar .navbar-nav .nav-link:hover {
+header .navbar .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 header .navbar .navbar-nav .nav-item.active,
-header .navbar .navbar-nav .nav-link.active,
+header .navbar .nav-link.active,
 header .navbar .navbar-nav .nav-item:hover,
-header .navbar .navbar-nav .nav-link:hover,
+header .navbar .nav-link:hover,
 header .navbar .navbar-nav .nav-item:focus,
-header .navbar .navbar-nav .nav-link:focus {
+header .navbar .nav-link:focus {
   color: white;
 }
 header .navbar .btn-outline-light {
@@ -65,7 +66,12 @@ header .navbar .btn-outline-light:hover::before {
   filter: invert(100%);
 }
 header .navbar .navbar-toggler-icon {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAMAAACf4xmcAAAARVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////9SnXPCAAAAFnRSTlMAAQIEBQcICQsMDXt8fn+GlO3v8fv92Ny/JQAAAIZJREFUOMvt09EKwjAMheEkU7fZui2dnvd/VK8EOQnMC2ET/C/LB20KETl4VhycV2NWkXVj5rgaN6IxA8IFosAXmfR9zqwm8xZjls9bmDkG5UY4M0Djx78P8mdHYA2D6jabAOCyyWxqn7DXC3dgK06BnbHy0ZzuwsysWx4B3ZdOYmFl5Ad6Ak8RFrc7p7ocAAAAAElFTkSuQmCC);
+  transition: all ease-in-out 200ms;
+  transform: rotate(180deg);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAZlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+Vn2moAAAAIXRSTlMAAgMEBwgMDQ4QFBkaHS0uUVJUVX+twMHD0dPZ2t7v9/26tGxEAAAArklEQVQokbXTwRKCMAwE0A2IKIpaoICClP3/n/SAjEAJXnSvb6ZN0hSAmMrRiyuNAEDc+jak2QOBqmQjyHQlDeotLuFIMoSXkCQdSJK+4g2/4eg4SbTk87zk04LTOafLw4upFt7d8vjoXfzKk37UPllrzIx8W+/bDmqVsUQdSXY7bWpXkrzoQy2GnjQWa+UfL6bwl2XaXMUK+RYbBE9dWwEOqrcxAAR5vfYF6ywAXlk7SXy6gIYDAAAAAElFTkSuQmCC);
+}
+header .navbar .navbar-toggler.collapsed .navbar-toggler-icon {
+  transform: rotate(0deg);
 }
 header h1.title {
   color: white;
@@ -93,6 +99,9 @@ header::after {
   header .nav .nav-link {
     display: block;
     width: 100%;
+  }
+  header .navbar {
+    background-color: rgba(0, 0, 0, 0.6);
   }
 }
 section.intro {
@@ -179,6 +188,20 @@ section.projects h2 {
 section.projects .group .card {
   width: 220px;
 }
+section.projects .group .card img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  z-index: 2;
+}
+section.projects .group .card:hover img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+section.projects .group .card:hover h5 {
+  background: none;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
 section.projects .group a {
   display: inline-block;
   float: left;
@@ -188,6 +211,16 @@ section.projects .group a {
 section.projects .group a:hover {
   text-decoration: none;
   color: #007e3b;
+}
+section.projects .group img,
+section.projects .group h5 {
+  transition: all ease-in-out 200ms;
+}
+section.projects .group h5 {
+  margin: -56px 0 0 0 !important;
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  z-index: 3;
 }
 section.projects .group h5::after {
   display: block;

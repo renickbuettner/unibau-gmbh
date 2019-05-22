@@ -24,8 +24,8 @@ header {
         border-top: 1px solid white;
         border-bottom: 1px solid white;
         padding: 0 1rem;
-        .navbar-nav {
-            .nav-item, .nav-link {
+        transition: all ease-in-out 300ms;
+        .navbar-nav .nav-item, .nav-link {
                 color: white;
                 padding: 1rem;
                 transition: all ease-in-out 200ms;
@@ -39,7 +39,7 @@ header {
                     color: white;
                 }
             }
-        }
+        
         .btn-outline-light {
             color: white;
             &::before {
@@ -62,7 +62,16 @@ header {
             }
         }
         .navbar-toggler-icon {
-            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAMAAACf4xmcAAAARVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////9SnXPCAAAAFnRSTlMAAQIEBQcICQsMDXt8fn+GlO3v8fv92Ny/JQAAAIZJREFUOMvt09EKwjAMheEkU7fZui2dnvd/VK8EOQnMC2ET/C/LB20KETl4VhycV2NWkXVj5rgaN6IxA8IFosAXmfR9zqwm8xZjls9bmDkG5UY4M0Djx78P8mdHYA2D6jabAOCyyWxqn7DXC3dgK06BnbHy0ZzuwsysWx4B3ZdOYmFl5Ad6Ak8RFrc7p7ocAAAAAElFTkSuQmCC);
+            transition: all ease-in-out 200ms;
+            transform: rotate(180deg);
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAZlBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+Vn2moAAAAIXRSTlMAAgMEBwgMDQ4QFBkaHS0uUVJUVX+twMHD0dPZ2t7v9/26tGxEAAAArklEQVQokbXTwRKCMAwE0A2IKIpaoICClP3/n/SAjEAJXnSvb6ZN0hSAmMrRiyuNAEDc+jak2QOBqmQjyHQlDeotLuFIMoSXkCQdSJK+4g2/4eg4SbTk87zk04LTOafLw4upFt7d8vjoXfzKk37UPllrzIx8W+/bDmqVsUQdSXY7bWpXkrzoQy2GnjQWa+UfL6bwl2XaXMUK+RYbBE9dWwEOqrcxAAR5vfYF6ywAXlk7SXy6gIYDAAAAAElFTkSuQmCC);
+        }
+        .navbar-toggler {            
+            &.collapsed {
+                .navbar-toggler-icon {
+                    transform: rotate(0deg);
+                }
+            }
         }
     }
     h1.title {
@@ -94,6 +103,9 @@ header {
         .nav .nav-link {
             display: block;
             width: 100%;
+        }
+        .navbar {
+            background-color: rgba(0,0,0,0.6);
         }
     }
 }
@@ -191,6 +203,22 @@ section.projects {
     .group {
         .card {
             width: 220px;
+            img {
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+                z-index: 2;
+            }
+            &:hover {
+                img {
+                    -webkit-filter: grayscale(0%);
+                    filter: grayscale(0%);
+                }
+                h5 {
+                    background: none;
+                    -webkit-filter: invert(100%);
+                    filter: invert(100%);
+                }
+            }
         }
         a {
             display: inline-block;
@@ -201,6 +229,15 @@ section.projects {
                 text-decoration: none;
                 color: lighten(@colorPrimary, 10%);
             }
+        }
+        img, h5 {
+            transition: all ease-in-out 200ms;
+        }
+        h5 {
+            margin: -56px 0 0 0 !important;
+            background: rgba(0,0,0,0.35);
+            color: white;
+            z-index: 3;
         }
         h5::after {
             display: block;
