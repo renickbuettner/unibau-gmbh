@@ -52,6 +52,7 @@ page.utils.cookies = {
 };
 
 page.ext.cookies = function () {
+    const isMobile = window.innerWidth < 768;
     const container = document.createElement("div");
     container.id = "dialog-cookies";
     container.className = "card bg-dark text-white";
@@ -67,10 +68,12 @@ page.ext.cookies = function () {
     
     const dismiss = document.createElement("a");
     dismiss.innerText = "Verstanden";
-    dismiss.className = "float-right btn btn-outline-secondary";
-    dismiss.style.position = "absolute";
-    dismiss.style.right = "15px";
-    dismiss.style.top = "13px";
+    dismiss.className = "btn btn-outline-secondary" + (isMobile ? " btn-block mt-3" : '');
+    dismiss.style.position = (isMobile ? "relative" : "absolute");
+    if (!isMobile) {
+        dismiss.style.right = "15px";
+        dismiss.style.top = "13px";
+    }
     dismiss.onclick = function () {
         $("#dialog-cookies").hide(0);
         page.utils.cookies.set("acceptCookies", "true", 120, page.domain, null, false);
